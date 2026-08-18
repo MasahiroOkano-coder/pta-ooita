@@ -84,6 +84,7 @@
     .time-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-tint); color: var(--accent-deep); font-weight: 600; font-size: 1.05rem; padding: 5px 14px; border-radius: 10px; margin-bottom: 10px; letter-spacing: 0.02em; }
     .item-title { font-size: 1.08rem; font-weight: 600; color: var(--pine-deep); display: flex; align-items: center; gap: 8px; line-height: 1.5; }
     .item-desc { font-size: 0.88rem; color: var(--text-sub); margin-top: 8px; line-height: 1.7; }
+    .item-desc a { color: var(--accent-deep); font-weight: 600; }
 
     /* Transit Block */
     .transit-block { background: var(--transit-bg); border: 1px dashed #cbbfa0; border-radius: 12px; padding: 12px 16px; margin: 10px 6px; font-size: 0.82rem; color: #5c5245; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
@@ -234,7 +235,7 @@
       <img src="./images/usa-jingu.jpg" alt="宇佐神宮" class="item-img">
       <span class="time-badge">⏰ 15:45 - 16:45</span>
       <div class="item-title">⛩️ 宇佐神宮 参拝・視察</div>
-      <div class="item-desc">全国4万社ある八幡宮の総本社（国宝）</div>
+      <div class="item-desc">全国4万社ある八幡宮の総本社（国宝）<br><a href="http://www.usajinguu.com/guide/" target="_blank" rel="noopener noreferrer">宇佐神宮境内の案内 ➔</a></div>
     </div>
 
     <div class="transit-block">
@@ -317,18 +318,21 @@
           <img src="./images/jigoku-meguri.jpg" alt="別府地獄めぐり（血の池地獄）" class="card-img">
           <div class="card-name">別府地獄めぐり（血の池地獄）</div>
           <div class="card-meta">国指定名勝 / 予約不要<br>真っ赤に染まる湯けむりの絶景</div>
+          <a href="https://www.beppu-jigoku.com/" target="_blank" class="card-btn">公式サイトを見る ➔</a>
         </div>
 
         <div class="slider-card">
           <img src="images/akemi-yunosato.jpg" alt="湯の里" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">明礬温泉 湯の里</div>
           <div class="card-meta">湯の花小屋見学＆名物地獄蒸しプリン（￥400）<br>HOTEL AZから車で約15分</div>
+          <a href="https://yuno-hana.jp/" target="_blank" class="card-btn">公式サイトを見る ➔</a>
         </div>
 
         <div class="slider-card">
           <img src="images/kaori-hakubutsukan.jpg" alt="香りの博物館" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">大分香りの博物館</div>
           <div class="card-meta">室内で快適に楽しめる体験型スポット<br>HOTEL AZから車で約10分</div>
+          <a href="https://oita-kaori.jp/" target="_blank" class="card-btn">公式サイトを見る ➔</a>
         </div>
 
       </div>
@@ -381,7 +385,7 @@
           <img src="images/kaisen-izutsu.jpg" alt="いづつ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">海鮮いづつ</div>
           <div class="card-meta">清風から徒歩4分<br><b>名物：</b>ボリューム満点 海鮮丼<br><b>目安：</b>￥1,500〜￥2,500</div>
-          <a href="https://beppu-tourism.com/gourmet/kaisenizutsu/" target="_blank" class="card-btn">お店の詳細を見る ➔</a>
+          <a href="https://tabelog.com/oita/A4402/A440202/44004374/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
         <div class="slider-card">
@@ -447,15 +451,38 @@
           <img src="images/cucuchi.jpg" alt="鞠智" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">鞠智（cucuchi）</div>
           <div class="card-meta">焼き立てどら焼き＆地元素材の和スイーツ</div>
+          <a href="https://tabelog.com/oita/A4402/A440201/44004414/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
         <div class="slider-card">
           <img src="images/jazz-to-youkan.jpg" alt="ジャズとようかん" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">ジャズとようかん</div>
           <div class="card-meta">ピアノ柄の見た目が非常におしゃれな羊羹</div>
+          <a href="https://tabelog.com/oita/A4402/A440201/44009849/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
       </div>
+
+      <div class="slider-title">🍴 湯布院 ランチ候補</div>
+      <div class="slider-container">
+
+        <div class="slider-card">
+          <img src="images/yufuin-burger.jpg" alt="ゆふいんバーガーハウス" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80'" class="card-img">
+          <div class="card-name">ゆふいんバーガーハウス</div>
+          <div class="card-meta"><b>名物：</b>ハンバーガー<br><b>目安：</b>￥1,000〜￥2,000</div>
+          <a href="https://tabelog.com/oita/A4402/A440201/44005389/" target="_blank" class="card-btn">食べログを開く ➔</a>
+        </div>
+
+        <div class="slider-card">
+          <img src="images/yotosha.jpg" alt="レストラン 洋灯舎" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80'" class="card-img">
+          <div class="card-name">レストラン 洋灯舎</div>
+          <div class="card-meta"><b>名物：</b>洋食・フレンチ・オーベルジュ<br><b>目安：</b>￥1,000〜￥2,000</div>
+          <a href="https://tabelog.com/oita/A4402/A440201/44000660/" target="_blank" class="card-btn">食べログを開く ➔</a>
+        </div>
+
+      </div>
+
+      <button class="btn-action" onclick="openModal('🔗 湯布院 お役立ちリンク', '<a href=\'https://yufuin.gr.jp/\' target=\'_blank\' rel=\'noopener noreferrer\'>湯布院・庄内・狭間公式旅ガイド ➔</a><br><br><a href=\'https://www.yufuin.org/\' target=\'_blank\' rel=\'noopener noreferrer\'>湯の坪横丁 ➔</a><br><br><a href=\'https://ontrip.jal.co.jp/kyushu/17607330\' target=\'_blank\' rel=\'noopener noreferrer\'>湯布院・湯の坪街道！おすすめの食べ歩き＆お土産スポットマップ ➔</a>')">🔗 湯布院 お役立ちリンク</button>
     </div>
 
     <div class="transit-block">
@@ -496,7 +523,7 @@
     <div class="timeline-item" data-time="21:10">
       <span class="time-badge">⏰ 21:10</span>
       <div class="item-title">🚌 羽田空港第1T出発</div>
-      <div class="item-desc">リムジンバス（京急）</div>
+      <div class="item-desc">リムジンバス（京急）<br><a href="https://www.tobu-bus.com/pc/kousoku/08.html" target="_blank" rel="noopener noreferrer">東武バス羽田空港線ホームページ ➔</a></div>
     </div>
 
     <div class="transit-block">
