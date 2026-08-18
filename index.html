@@ -111,6 +111,17 @@
     .modal-body { font-size: 0.9rem; color: var(--text-main); margin-bottom: 22px; line-height: 1.8; text-align: left; }
     .modal-body a { color: var(--accent-deep); }
     .modal-close { background: transparent; color: var(--pine-deep); font-weight: 600; padding: 10px 26px; border-radius: 20px; border: 1.5px solid var(--pine-deep); cursor: pointer; min-height: 44px; }
+
+    /* Next Day Button */
+    .next-day-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 52px; margin: 20px 0 12px; padding: 12px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%); color: #fff; font-weight: 600; font-size: 0.98rem; font-family: 'Noto Serif JP', serif; border: none; border-radius: 14px; cursor: pointer; box-shadow: 0 6px 16px rgba(124,90,46,0.28); letter-spacing: 0.04em; }
+    .next-day-btn:active { transform: scale(0.98); }
+
+    /* Scroll To Top */
+    .scroll-top-btn { position: fixed; right: 16px; bottom: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--pine-deep); color: #fdfaf4; border: none; font-size: 1.2rem; box-shadow: 0 6px 16px rgba(0,0,0,0.28); cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.25s; z-index: 500; }
+    .scroll-top-btn.show { opacity: 0.92; visibility: visible; transform: translateY(0); }
+
+    /* Header Seat Button */
+    .seat-btn { background: rgba(255,253,250,0.9); color: var(--pine-deep); font-size: 0.72rem; font-weight: 700; padding: 5px 12px; border-radius: 12px; border: none; cursor: pointer; margin-left: 8px; white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -125,6 +136,7 @@
       <div class="member-tags">
         <span>大熊 政子</span> / <span>横山 智美</span> / <span>岡野 正裕</span>
       </div>
+      <button class="seat-btn" onclick="openModal('✈️ 座席案内・機内持ち込みルール', '<b>往路 JAL665便（羽田 ➔ 大分）</b><br>岡野様：24C　大熊様：25C　横山様：26C<br><br><b>復路 JAL674便（大分 ➔ 羽田）</b><br>岡野様：36K　大熊様：36J　横山様：36H<br><br><b>🧳 預け入れ荷物へ（機内持ち込みNG）</b><br>・刃物・工具類：ハサミ、カッター、ナイフ、先端が鋭利な金属類<br>※国内線はペットボトル等の持ち込みが可能ですが、保安検査場で専用の検査が必要です<br><br><b>🎒 機内持ち込みへ（預け入れNG）</b><br>・モバイルバッテリー／予備リチウムイオン電池：発火リスクのため預け入れ厳禁<br>・加熱式タバコ・電子タバコ：IQOSなど（機内での使用・充電は禁止）<br>・喫煙用ライター・マッチ：1人1個まで身につけて機内持ち込み可（預け入れ不可）<br><br><b>🚫 持ち込み・預け入れともに禁止</b><br>・火薬類：花火、クラッカーなど<br>・高圧スプレー缶の一部：殺虫剤、塗料スプレー等（日用品・化粧品スプレーは1容器0.5kg/0.5L以下なら可）')">🎫 座席情報</button>
     </div>
   </header>
 
@@ -161,6 +173,7 @@
       <span class="time-badge">⏰ 11:30 発</span>
       <div class="item-title">✈️ 羽田空港発 JAL665便（大分空港行き）</div>
       <div class="item-desc">11:30発 ➔ 13:40着（所要時間：約130分）</div>
+      <button class="btn-action" onclick="openModal('✈️ 座席案内・機内持ち込みルール', '<b>往路 JAL665便（羽田 ➔ 大分）</b><br>岡野様：24C　大熊様：25C　横山様：26C<br><br><b>復路 JAL674便（大分 ➔ 羽田）</b><br>岡野様：36K　大熊様：36J　横山様：36H<br><br><b>🧳 預け入れ荷物へ（機内持ち込みNG）</b><br>・刃物・工具類：ハサミ、カッター、ナイフ、先端が鋭利な金属類<br>※国内線はペットボトル等の持ち込みが可能ですが、保安検査場で専用の検査が必要です<br><br><b>🎒 機内持ち込みへ（預け入れNG）</b><br>・モバイルバッテリー／予備リチウムイオン電池：発火リスクのため預け入れ厳禁<br>・加熱式タバコ・電子タバコ：IQOSなど（機内での使用・充電は禁止）<br>・喫煙用ライター・マッチ：1人1個まで身につけて機内持ち込み可（預け入れ不可）<br><br><b>🚫 持ち込み・預け入れともに禁止</b><br>・火薬類：花火、クラッカーなど<br>・高圧スプレー缶の一部：殺虫剤、塗料スプレー等（日用品・化粧品スプレーは1容器0.5kg/0.5L以下なら可）')">🎫 座席案内・持ち込みルール</button>
     </div>
 
     <div class="transit-block">
@@ -192,21 +205,21 @@
           <img src="images/nanase-lunch.jpg" alt="なゝ瀬" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">なゝ瀬 大分空港店</div>
           <div class="card-meta">空港ターミナル3F / 通し営業<br><b>名物：</b>とり天定食・りゅうきゅう<br><b>目安：</b>￥1,000〜￥1,999</div>
-          <a href="https://tabelog.com/oita/A4404/A440402/44000301/" target="_blank" class="card-btn">食べログを開く ➔</a>
+          <a href="https://tabelog.com/oita/A4403/A440302/44000019/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
         <div class="slider-card">
           <img src="images/uoichi-uoza.jpg" alt="魚市魚座" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">魚市魚座</div>
           <div class="card-meta">守江海岸沿い（17時まで）<br><b>名物：</b>海鮮丼・とり天定食（￥1,320）<br><b>目安：</b>￥1,000〜￥1,999</div>
-          <a href="https://tabelog.com/oita/A4404/A440402/44000213/" target="_blank" class="card-btn">食べログを開く ➔</a>
+          <a href="https://tabelog.com/oita/A4403/A440301/44000052/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
         <div class="slider-card">
           <img src="images/kakumasa.jpg" alt="かくまさ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">かくまさ（宇佐神宮 表参道）</div>
           <div class="card-meta">宇佐神宮参道すぐ<br><b>名物：</b>だんご汁・とり天定食<br><b>目安：</b>￥1,000〜￥1,500</div>
-          <a href="https://tabelog.com/oita/A4404/A440401/44000140/" target="_blank" class="card-btn">食べログを開く ➔</a>
+          <a href="https://tabelog.com/oita/A4404/A440402/44005996/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
       </div>
@@ -272,11 +285,13 @@
           <img src="images/tairiku-ramen.jpg" alt="大陸ラーメン" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">大陸ラーメン</div>
           <div class="card-meta">HOTEL AZから徒歩4分<br><b>名物：</b>別府冷麺＆とり天<br><b>目安：</b>￥800〜￥1,500</div>
-          <a href="https://tabelog.com/oita/A4402/A440202/44001550/" target="_blank" class="card-btn">食べログを開く ➔</a>
+          <a href="https://tabelog.com/oita/A4402/A440202/44003958/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
       </div>
     </div>
+
+    <button class="next-day-btn" onclick="switchTab(1); window.scrollTo(0,0);">Day 2（8/20）へ ➔</button>
 
   </div>
 
@@ -359,25 +374,27 @@
           <img src="images/toyotsune.jpg" alt="とよ常" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">とよ常 本店</div>
           <div class="card-meta">清風から徒歩3分<br><b>名物：</b>特上天丼・とり天・郷土料理<br><b>目安：</b>￥1,500〜￥2,500</div>
-          <a href="https://tabelog.com/oita/A4402/A440202/44000053/" target="_blank" class="card-btn">食べログを開く ➔</a>
+          <a href="https://tabelog.com/oita/A4402/A440202/44000199/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
         <div class="slider-card">
           <img src="images/kaisen-izutsu.jpg" alt="いづつ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">海鮮いづつ</div>
           <div class="card-meta">清風から徒歩4分<br><b>名物：</b>ボリューム満点 海鮮丼<br><b>目安：</b>￥1,500〜￥2,500</div>
-          <a href="https://tabelog.com/oita/A4402/A440202/44000808/" target="_blank" class="card-btn">食べログを開く ➔</a>
+          <a href="https://beppu-tourism.com/gourmet/kaisenizutsu/" target="_blank" class="card-btn">お店の詳細を見る ➔</a>
         </div>
 
         <div class="slider-card">
           <img src="images/robata-jin.jpg" alt="ろばた仁" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80'" class="card-img">
           <div class="card-name">ろばた仁 本店</div>
           <div class="card-meta">清風から徒歩3分<br><b>名物：</b>関あじ関さば・炭火炉端焼き<br><b>目安：</b>￥3,000〜￥4,000</div>
-          <a href="https://tabelog.com/oita/A4402/A440202/44000039/" target="_blank" class="card-btn">食べログを開く ➔</a>
+          <a href="https://tabelog.com/oita/A4402/A440202/44000332/" target="_blank" class="card-btn">食べログを開く ➔</a>
         </div>
 
       </div>
     </div>
+
+    <button class="next-day-btn" onclick="switchTab(2); window.scrollTo(0,0);">Day 3（8/21）へ ➔</button>
 
   </div>
 
@@ -387,6 +404,7 @@
     <div class="timeline-item" data-time="07:00">
       <span class="time-badge">⏰ 07:00</span>
       <div class="item-title">🍳 朝食（別府清風 バイキング）</div>
+      <div class="item-desc">※代理事前受付（06:00-09:00）：岡野様が3人分一括受付を行い、完了スクショをLINE共有</div>
       <button class="btn-action" onclick="openModal('朝食（別府清風 バイキング）', 'ご飯派の方にも、パン派の方にもご満足いただける充実のラインナップ。<br>旅の朝の贅沢な時間をお過ごしください。<br>のっけ丼、佐伯胡麻出汁うどん、フレンチトースト等')">🥐 メニュー例を見る</button>
     </div>
 
@@ -403,7 +421,7 @@
     <div class="timeline-item" data-time="08:30">
       <span class="time-badge">⏰ 08:30 - 12:30</span>
       <div class="item-title">🏛️ 2日目 全体大会（ビーコンプラザ）</div>
-      <button class="btn-action" onclick="openModal('全体大会プログラム', '08:00〜 受付<br>09:00〜 アトラクション（由布高校 郷土芸能部）<br>09:30〜 開会式・表彰式<br>10:40〜 記念講演「夢が導く諦めない気持ち」<br> 講師：内川 聖一 氏（元プロ野球選手）<br>12:00〜 閉会式')">📋 タイムスケジュール詳細</button>
+      <button class="btn-action" onclick="openModal('全体大会プログラム', '08:00〜 受付<br>09:00〜 アトラクション（由布高校 郷土芸能部）<br>09:30〜 開会式・表彰式<br>10:40〜 記念講演「夢が導く諦めない気持ち」<br> 講師：内川 聖一 氏（元プロ野球選手）<br>12:00〜 閉会式<br><br><a href=\'https://pta2026-oita.jp/subcommittee.html\' target=\'_blank\' rel=\'noopener noreferrer\'>全国PTA大会 公式サイトはこちら</a>')">📋 タイムスケジュール詳細</button>
     </div>
 
     <div class="transit-block">
@@ -411,9 +429,9 @@
       <div class="transit-time">約30分</div>
     </div>
 
-    <div class="timeline-item" data-time="12:30">
+    <div class="timeline-item" data-time="13:00">
       <img src="./images/yunotsubo-kaido.jpg" alt="湯の坪街道" class="item-img">
-      <span class="time-badge">⏰ 12:30 - 16:30</span>
+      <span class="time-badge">⏰ 13:00 - 16:30</span>
       <div class="item-title">🛍️ 湯布院 散策・ランチ・お土産タイム</div>
 
       <div class="slider-title">🎁 湯布院 お土産＆立ち寄りスポット</div>
@@ -457,8 +475,15 @@
       <button class="btn-action" onclick="openModal('ラウンジくにさき情報', '<b>場所：</b>国内線ターミナル2F 搭乗待合室内<br><b>営業時間：</b>6:40〜最終便出発15分前<br><b>座席数：</b>47席（全席禁煙）<br>ゴールドカード提示でスムーズに利用可能です。')">☕ ラウンジ情報</button>
     </div>
 
+    <div class="timeline-item" data-time="18:55">
+      <span class="time-badge">⏰ 18:55発</span>
+      <div class="item-title">✈️ 大分空港発 JAL674便（羽田空港行き）</div>
+      <div class="item-desc">18:55発 ➔ 20:40着</div>
+      <button class="btn-action" onclick="openModal('✈️ 座席案内・機内持ち込みルール', '<b>往路 JAL665便（羽田 ➔ 大分）</b><br>岡野様：24C　大熊様：25C　横山様：26C<br><br><b>復路 JAL674便（大分 ➔ 羽田）</b><br>岡野様：36K　大熊様：36J　横山様：36H<br><br><b>🧳 預け入れ荷物へ（機内持ち込みNG）</b><br>・刃物・工具類：ハサミ、カッター、ナイフ、先端が鋭利な金属類<br>※国内線はペットボトル等の持ち込みが可能ですが、保安検査場で専用の検査が必要です<br><br><b>🎒 機内持ち込みへ（預け入れNG）</b><br>・モバイルバッテリー／予備リチウムイオン電池：発火リスクのため預け入れ厳禁<br>・加熱式タバコ・電子タバコ：IQOSなど（機内での使用・充電は禁止）<br>・喫煙用ライター・マッチ：1人1個まで身につけて機内持ち込み可（預け入れ不可）<br><br><b>🚫 持ち込み・預け入れともに禁止</b><br>・火薬類：花火、クラッカーなど<br>・高圧スプレー缶の一部：殺虫剤、塗料スプレー等（日用品・化粧品スプレーは1容器0.5kg/0.5L以下なら可）')">🎫 座席案内・持ち込みルール</button>
+    </div>
+
     <div class="transit-block">
-      <div class="transit-info">✈️ フライト JAL674便（18:55発 ➔ 20:40着）</div>
+      <div class="transit-info">✈️ フライト JAL674便</div>
       <div class="transit-time">約105分</div>
     </div>
 
@@ -495,6 +520,9 @@
       <button class="modal-close" onclick="document.getElementById('modal').style.display='none'">閉じる</button>
     </div>
   </div>
+
+  <!-- Scroll To Top -->
+  <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="最上部へ戻る">↑</button>
 
   <script>
     // ブラウザのスクロール自動復元を無効化
@@ -558,6 +586,12 @@
     });
 
     updateOnTimeHighlight();
+
+    // スクロールで最上部へ戻るボタンの表示切替
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+    });
   </script>
 </body>
 </html>
